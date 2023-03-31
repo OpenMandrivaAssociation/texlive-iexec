@@ -1,6 +1,6 @@
 Name:		texlive-iexec
 Version:	64908
-Release:	1
+Release:	2
 Summary:	Execute shell commands and input their output
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/iexec
