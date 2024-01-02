@@ -1,5 +1,5 @@
 Name:		texlive-iexec
-Version:	68522
+Version:	69230
 Release:	1
 Summary:	Execute shell commands and input their output
 Group:		Publishing
