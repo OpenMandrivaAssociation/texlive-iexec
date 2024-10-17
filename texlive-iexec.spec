@@ -3,7 +3,7 @@ Version:	69420
 Release:	1
 Summary:	Execute shell commands and input their output
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/iexec
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/iexec
 License:	mit
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/iexec.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/iexec.doc.r%{version}.tar.xz
