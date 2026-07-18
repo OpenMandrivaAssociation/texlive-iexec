@@ -1,41 +1,24 @@
-Name:		texlive-iexec
-Version:	69420
-Release:	1
+%global tl_name iexec
+%global tl_revision 79681
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.16.1
+Release:	%{tl_revision}.1
 Summary:	Execute shell commands and input their output
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/iexec
 License:	mit
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/iexec.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/iexec.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/iexec.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/iexec.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/iexec.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/iexec.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(pgf)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-With the help of the \iexec command, you can execute a shell
-command and then input its output into your document. This
-package also lets you use any special symbols inside your
-command.
+With the help of the \iexec command, you can execute a shell command and
+then input its output into your document. This package also lets you use
+any special symbols inside your command.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/iexec
-%{_texmfdistdir}/tex/latex/iexec
-%doc %{_texmfdistdir}/doc/latex/iexec
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
